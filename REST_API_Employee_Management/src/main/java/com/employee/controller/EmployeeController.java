@@ -64,8 +64,8 @@ public class EmployeeController {
 		return ResponseEntity.ok().body(emp);
 
 	}
-	/*
-	//this sort method is of hardcode,we need to alternate change the default value to asc or desc order
+	
+	//this sort method :http://localhost:8080/api/employees/sort?sortBy=firstname&sortDir=desc
 	@GetMapping("/sort")
 	public ResponseEntity<List<Employee>> getAllEmployee(
 			@RequestParam(value = "sortBy", defaultValue = "firstname", required = false) String sortBy,
@@ -73,9 +73,9 @@ public class EmployeeController {
 		List<Employee> allEmp = this.employeeService.findAllEmployees(sortBy, sortDir);
 		return new ResponseEntity<List<Employee>>(allEmp, HttpStatus.OK);
 	}
-	*/
 
-	//this sort method 
+/*
+	//this sort method "http://localhost:8080/api/employees/sort"
 	@GetMapping("/sort")
 	public List<Employee> getAllEmployeesAndSort(@RequestParam("order") String order) {
 		List<Employee> employees = employeeService.findAllEmployees();
@@ -96,5 +96,5 @@ public class EmployeeController {
 		}
 		return employees;
 	}
-
+*/
 }
